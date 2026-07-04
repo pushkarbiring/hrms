@@ -1,0 +1,74 @@
+/*<!-- Done by Ayan Garai -->*/
+
+
+@import url('payroll.css');
+
+.profile-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* User Identity Frame Blocks */
+.profile-identity-cluster {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+}
+
+.avatar-emulation {
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 600;
+    border-radius: 50%;
+    box-shadow: var(--shadow-md);
+}
+
+.identity-text h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 2px;
+}
+
+.role-caption {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.badge-department {
+    background-color: rgba(79, 70, 229, 0.08);
+    color: var(--primary);
+}
+
+/* Core Multi-Column Structural Grid */
+.profile-details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.detail-cell label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+}
+
+.detail-cell p {
+    font-size: 15px;
+    color: var(--text-main);
+    font-weight: 500;
+}

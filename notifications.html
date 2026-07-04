@@ -1,0 +1,148 @@
+<!-- Done by Ayan Garai -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRM Portal - Alert Notifications</title>
+    <style>
+        /* INLINED VARIABLES.CSS */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        :root {
+            --primary: #4F46E5;
+            --primary-hover: #4338CA;
+            --secondary: #10B981;
+            --danger: #EF4444;
+            --warning: #F59E0B;
+            --bg-main: #F8FAFC;
+            --bg-card: #FFFFFF;
+            --bg-sidebar: #0F172A;
+            --font-family: 'Inter', sans-serif;
+            --text-main: #1E293B;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* INLINED GLOBAL.CSS & LAYOUTS */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+        .app-container { display: flex; height: 100vh; overflow: hidden; }
+        
+        /* SIDEBAR STYLING */
+        .sidebar {
+            width: 260px;
+            background-color: var(--bg-sidebar);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 24px;
+            flex-shrink: 0;
+        }
+        .logo-area { font-size: 24px; font-weight: 700; color: var(--secondary); margin-bottom: 32px; }
+        .nav-menu { display: flex; flex-direction: column; gap: 8px; flex-grow: 1; }
+        .nav-item {
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .nav-item:hover, .nav-item.active { background-color: rgba(255, 255, 255, 0.08); color: white; }
+        .user-tag { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 16px; font-size: 13px; color: var(--text-muted); }
+        .user-tag span { color: white; display: block; font-weight: 500; margin-top: 2px; }
+
+        /* MAIN CONTENT VIEWPORT */
+        .main-content { flex-grow: 1; overflow-y: auto; padding: 40px; }
+        .content-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+        .content-header h1 { font-size: 28px; font-weight: 700; color: var(--text-main); letter-spacing: -0.025em; }
+
+        /* INLINED NOTIFICATIONS.CSS */
+        .alert-stack { display: flex; flex-direction: column; gap: 16px; max-width: 800px; }
+        .alert-block {
+            display: flex;
+            align-items: start;
+            gap: 16px;
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        .alert-block:hover { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
+        .alert-info { border-left: 4px solid var(--primary); }
+        .alert-warning { border-left: 4px solid var(--warning); }
+        .alert-announcement { border-left: 4px solid #8B5CF6; }
+        .alert-content-wrapper { flex-grow: 1; }
+        .alert-block h4 { font-size: 15px; font-weight: 600; color: var(--text-main); margin-bottom: 4px; }
+        .alert-block p { font-size: 14px; color: var(--text-muted); line-height: 1.4; }
+        .alert-timestamp { font-size: 12px; color: var(--text-muted); font-weight: 500; margin-top: 8px; display: block; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div>
+                <div class="logo-area">HRM Portal</div>
+                <nav class="nav-menu">
+                    <!-- 🛠️ LINK PATHS UPDATED BELOW -->
+                    <a href="payroll.html" class="nav-item">Payroll Status</a>
+                    <a href="reports.html" class="nav-item">Reports Matrix</a>
+                    <a href="notifications.html" class="nav-item active">Alert Workspace</a>
+                    <a href="profile.html" class="nav-item">My Profile</a>
+                    <a href="settings.html" class="nav-item">Settings Layout</a>
+                </nav>
+            </div>
+            <div class="user-tag">Logged in as: <span>HR Accountant</span></div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h1>Broadcast Notifications System</h1>
+            </header>
+
+            <div class="alert-stack">
+                <div class="alert-block alert-info">
+                    <div class="alert-content-wrapper">
+                        <h4>Payroll Matrix Distribution Complete</h4>
+                        <p>Processing routines ran successfully. Paychecks have been routed out for automated clearing house delivery.</p>
+                        <span class="alert-timestamp">Just now</span>
+                    </div>
+                </div>
+
+                <div class="alert-block alert-warning">
+                    <div class="alert-content-wrapper">
+                        <h4>Security Parameter Warning</h4>
+                        <p>Your current workspace verification credential key structure signature is set to expire in 7 calendar days.</p>
+                        <span class="alert-timestamp">2 hours ago</span>
+                    </div>
+                </div>
+
+                <div class="alert-block alert-announcement">
+                    <div class="alert-content-wrapper">
+                        <h4>Corporate Infrastructure Planned Maintenance</h4>
+                        <p>Database tracking clusters will cycle offline for version updates on Saturday night at 22:00 UTC.</p>
+                        <span class="alert-timestamp">1 day ago</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

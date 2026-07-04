@@ -1,0 +1,85 @@
+/*<!-- Done by Ayan Garai -->*/
+
+
+@import url('payroll.css');
+
+.visual-chart-deck {
+    margin-bottom: 32px;
+}
+
+/* Premium Simulated Metrics Grid Charts */
+.simulated-bar-chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 240px;
+    padding-top: 24px;
+    border-left: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    margin-top: 24px;
+}
+
+.bar-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 16%;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.bar {
+    width: 100%;
+    background-color: var(--border-color);
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 600;
+    padding-top: 8px;
+    transition: var(--transition);
+}
+
+.bar:hover {
+    background-color: var(--primary-hover);
+    transform: scaleX(1.05);
+}
+
+.bar.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+.bar-col label {
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+/* Bulk Matrix Action Row Nodes */
+.reporting-tabs-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.reporting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.report-meta h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 4px;
+}
+
+.report-meta p {
+    font-size: 13px;
+    color: var(--text-muted);
+}

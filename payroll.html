@@ -1,0 +1,89 @@
+<!-- Done by Ayan Garai -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRM Portal - Payroll Workspace</title>
+    <!-- Core UI Variables & Base Styling -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <!-- Component Specific Layout -->
+    <link rel="stylesheet" href="css/payroll.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Persistent Sidebar Navigation -->
+        <aside class="sidebar">
+            <div>
+                <div class="logo-area">HRM Portal</div>
+                <nav class="nav-menu">
+                    <a href="payroll.html" class="nav-item active">Payroll Status</a>
+                    <a href="reports.html" class="nav-item">Reports Matrix</a>
+                    <a href="notifications.html" class="nav-item">Alert Workspace</a>
+                    <a href="profile.html" class="nav-item">My Profile</a>
+                    <a href="settings.html" class="nav-item">Settings Layout</a>
+                </nav>
+            </div>
+            <div class="user-tag">Logged in as: <span>HR Accountant</span></div>
+        </aside>
+
+        <!-- Main Viewport -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1>Compensation & Payroll Processing</h1>
+                <div class="status-pill"><span class="pulse-dot"></span> System Operational</div>
+            </header>
+
+            <section class="payroll-grid">
+                <!-- Salary Breakdown using global .card class -->
+                <div class="card">
+                    <h2>Current Active Salary Breakdown</h2>
+                    <ul class="breakdown-list">
+                        <li><span>Base Monthly Remuneration:</span> <strong>$6,500.00</strong></li>
+                        <li><span>Corporate Housing Allowance:</span> <span class="credit">+$450.00</span></li>
+                        <li><span>Performance Incentive Pool:</span> <span class="credit">+$320.00</span></li>
+                        <li><span>Statutory Healthcare Deduction:</span> <span class="debit">-$180.00</span></li>
+                        <li><span>Income Retainage Tax (Estimated):</span> <span class="debit">-$840.00</span></li>
+                        <li class="total-row"><span>Net Disbursed Take-Home Pay:</span> <strong>$6,250.00</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Payslip History using global .card and .data-table classes -->
+                <div class="card">
+                    <h2>Historical Document Generation Ledger</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Pay Cycle Block</th>
+                                <th>Gross Calculated</th>
+                                <th>Net Distributed</th>
+                                <th>Filing Status</th>
+                                <th>Action Items</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>June 2026</td>
+                                <td>$7,270.00</td>
+                                <td>$6,250.00</td>
+                                <td><span class="badge badge-success">Disbursed</span></td>
+                                <td><button class="btn btn-outline" onclick="downloadPDF('2026-06')">Download PDF</button></td>
+                            </tr>
+                            <tr>
+                                <td>May 2026</td>
+                                <td>$7,270.00</td>
+                                <td>$6,250.00</td>
+                                <td><span class="badge badge-success">Disbursed</span></td>
+                                <td><button class="btn btn-outline" onclick="downloadPDF('2026-05')">Download PDF</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/payroll.js"></script>
+</body>
+</html>
