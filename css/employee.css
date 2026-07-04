@@ -1,17 +1,5 @@
 /* <!-- Done by Jarif Rahaman --> */
-:root {
-    --primary-color: #0056b3;
-    --bg-color: #f4f7f6;
-    --text-color: #333;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    margin: 0;
-    padding: 20px;
-}
+/* Global resets removed to prevent clashing with global.css */
 
 .container {
     max-width: 1000px;
@@ -58,13 +46,13 @@ body {
     object-fit: cover;
 }
 
-form label {
+.employee-form label {
     display: block;
     margin-top: 10px;
     font-weight: bold;
 }
 
-form input, form select {
+.employee-form input, .employee-form select {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
@@ -72,8 +60,8 @@ form input, form select {
     border-radius: 4px;
 }
 
-button {
-    background-color: var(--primary-color);
+.employee-btn {
+    background-color: var(--primary);
     color: white;
     padding: 10px 15px;
     border: none;
@@ -82,6 +70,6 @@ button {
     margin-top: 15px;
 }
 
-button:hover {
-    background-color: #004494;
+.employee-btn:hover {
+    background-color: var(--primary-hover);
 }
