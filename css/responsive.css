@@ -1,0 +1,85 @@
+/* css/responsive.css */
+
+/* =======================
+   1. GLOBAL TYPOGRAPHY SCALING
+   ======================= */
+/* Slightly reduce the base font size on smaller screens so the UI doesn't feel cramped */
+@media (max-width: 768px) {
+    html {
+        font-size: 15px; 
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+/* =======================
+   2. RESPONSIVE UTILITY CLASSES
+   ======================= */
+/* Your teammates can add these classes to their HTML to instantly fix layout issues on mobile */
+
+/* Hide elements entirely on mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .hide-on-mobile {
+        display: none !important;
+    }
+    
+    /* Force flex containers to stack vertically on mobile */
+    .stack-on-mobile {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+    
+    /* Force elements (like buttons or inputs) to take full width on mobile */
+    .w-100-mobile {
+        width: 100% !important;
+    }
+    
+    /* Center text on mobile */
+    .text-center-mobile {
+        text-align: center !important;
+    }
+    
+    /* Reduce padding inside cards for mobile views */
+    .card {
+        padding: 16px !important;
+    }
+}
+
+/* Hide elements on tablets and below (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .hide-on-tablet {
+        display: none !important;
+    }
+}
+
+/* Show elements ONLY on mobile (hidden on desktop) */
+@media (min-width: 769px) {
+    .show-on-mobile-only {
+        display: none !important;
+    }
+}
+
+/* =======================
+   3. TABLE RESPONSIVENESS
+   ======================= */
+/* Ensures that wide data tables don't break the page layout on mobile */
+@media (max-width: 768px) {
+    .table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-sm);
+    }
+    
+    .data-table th, 
+    .data-table td {
+        white-space: nowrap; /* Prevents text from awkwardly wrapping in tiny columns */
+    }
+}

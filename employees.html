@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List - HRMS</title>
+    <link rel="stylesheet" href="employee.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2>Employee Management</h2>
+        </header>
+        
+        <div class="controls-section">
+            <input type="text" id="searchInput" placeholder="Search by name or ID...">
+            <select id="departmentFilter">
+                <option value="all">All Departments</option>
+                </select>
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <table class="employee-table">
+            <thead>
+                <tr>
+                    <th>Profile Picture</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTableBody">
+                </tbody>
+        </table>
+
+        <div class="pagination" id="paginationControls">
+            <button id="prevPage">Previous</button>
+            <span id="pageIndicator">Page 1</span>
+            <button id="nextPage">Next</button>
+        </div>
+    </div>
+    
+    <script type="module" src="employee.js"></script>
+</body>
+</html>

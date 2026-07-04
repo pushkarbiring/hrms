@@ -1,0 +1,137 @@
+/* css/navbar.css */
+
+/* =======================
+   1. MAIN CONTENT WRAPPER
+   ======================= */
+/* This ensures the main content area sits to the right 
+   of the 260px fixed sidebar on desktop screens.
+*/
+.main-content {
+    flex: 1;
+    margin-left: 260px; /* Width of the sidebar */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 0;
+    transition: margin-left var(--transition);
+    background-color: var(--bg-main);
+}
+
+/* =======================
+   2. NAVBAR LAYOUT
+   ======================= */
+.top-navbar {
+    height: 72px;
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Hidden on desktop, shown on mobile */
+.mobile-menu-toggle {
+    display: none;
+}
+
+/* =======================
+   3. NAVBAR RIGHT (Profile & Notifications)
+   ======================= */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.notification-btn {
+    position: relative;
+}
+
+/* Position the badge from global.css over the bell icon */
+.notification-btn .badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    transform: translate(50%, -50%);
+    border: 2px solid var(--bg-card); /* Creates a cutout effect */
+}
+
+/* =======================
+   4. USER PROFILE DROP-AREA
+   ======================= */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.user-profile:hover {
+    background-color: var(--bg-main);
+    border-color: var(--border-color);
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-main);
+    line-height: 1.2;
+}
+
+.user-role {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: capitalize;
+    margin-top: 2px;
+}
+
+/* =======================
+   5. RESPONSIVE DESIGN
+   ======================= */
+@media (max-width: 1024px) {
+    .main-content {
+        margin-left: 0; /* Remove left margin when sidebar is hidden */
+    }
+    
+    .mobile-menu-toggle {
+        display: inline-flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-navbar {
+        padding: 0 16px;
+    }
+    
+    .navbar-right {
+        gap: 16px;
+    }
+    
+    /* Hide the text info on small screens, just keep the avatar */
+    .user-info {
+        display: none; 
+    }
+    
+    .user-profile {
+        padding: 4px;
+    }
+}
