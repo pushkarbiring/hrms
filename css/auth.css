@@ -1,25 +1,35 @@
-// Done by Pushkar Biring
+/* Done by Pushkar Biring */
 /* css/auth.css */
 
 /* Center everything on the screen for auth pages */
-.auth-layout {
+body.auth-layout {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    background: 
+        radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.15), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.15), transparent 25%);
     background-color: var(--bg-main);
-    padding: 20px;
 }
 
 .auth-container {
     width: 100%;
-    max-width: 420px;
-    animation: slideUpFade 0.4s ease-out forwards;
+    max-width: 440px;
+    padding: 20px;
+    z-index: 10;
 }
 
-/* Enhancing the global .card specifically for auth */
 .auth-card {
     padding: 40px;
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 
+        0 4px 24px -4px rgba(15, 23, 42, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.6);
 }
 
 /* Header Styling */
@@ -49,6 +59,38 @@
 
 .auth-header p {
     font-size: 0.875rem;
+}
+
+/* Glassmorphism subtle animated background blobs */
+body.auth-layout::before,
+body.auth-layout::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(60px);
+    opacity: 0.6;
+    animation: float 10s infinite ease-in-out alternate;
+}
+
+body.auth-layout::before {
+    background: var(--primary);
+    top: 10%;
+    left: 20%;
+}
+
+body.auth-layout::after {
+    background: var(--secondary);
+    bottom: 10%;
+    right: 20%;
+    animation-delay: -5s;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(30px, -50px) scale(1.1); }
 }
 
 /* Auth Specific Form Elements */
