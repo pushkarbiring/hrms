@@ -1,48 +1,151 @@
 <!-- Done by Jarif Rahaman -->
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee List - HRMS</title>
-    <link rel="stylesheet" href="employee.css">
+    <title>Employees - HRMS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/employee.css">
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h2>Employee Management</h2>
+
+<body class="app-layout">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="brand-logo">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span class="brand-text">HRMS</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <p class="nav-label">Main Menu</p>
+            <a href="dashboard.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span>Dashboard</span>
+            </a>
+            <a href="employees.html" class="nav-item active admin-only" style="display: none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle>
+                </svg>
+                <span>Employees</span>
+            </a>
+            <a href="attendance.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Attendance</span>
+            </a>
+            <a href="leave.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span>Leave Requests</span>
+            </a>
+            <a href="payroll.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+                <span>Payroll</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button id="logout-btn" class="nav-item text-danger"
+                style="background: none; border: none; width: 100%; text-align: left; cursor: pointer;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                <span>Log Out</span>
+            </button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="top-navbar">
+            <div class="navbar-left">
+                <button class="icon-btn mobile-menu-toggle" id="menu-toggle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+                <h2 class="page-title">Employees</h2>
+            </div>
+
+            <div class="navbar-right">
+                <button class="icon-btn notification-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                    <span class="badge">3</span>
+                </button>
+                <div class="user-profile">
+                    <div class="avatar">
+                        <span id="nav-avatar-initials">--</span>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name" id="nav-user-name">Loading...</span>
+                        <span class="user-role" id="nav-user-role">...</span>
+                    </div>
+                </div>
+            </div>
         </header>
-        
-        <div class="controls-section">
-            <input type="text" id="searchInput" placeholder="Search by name or ID...">
-            <select id="departmentFilter">
-                <option value="all">All Departments</option>
-                </select>
-            <button id="searchBtn">Search</button>
-        </div>
 
-        <table class="employee-table">
-            <thead>
-                <tr>
-                    <th>Profile Picture</th>
-                    <th>Name</th>
-                    <th>Department</th>
-                    <th>Role</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="employeeTableBody">
-                </tbody>
-        </table>
+        <div class="dashboard-container">
 
-        <div class="pagination" id="paginationControls">
-            <button id="prevPage">Previous</button>
-            <span id="pageIndicator">Page 1</span>
-            <button id="nextPage">Next</button>
+            <div class="card">
+                <div class="controls-section">
+                    <input type="text" placeholder="Search employees..." class="form-input" id="search-input">
+                    <select class="form-input" id="dept-filter">
+                        <option value="">All Departments</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="HR">Human Resources</option>
+                        <option value="Marketing">Marketing</option>
+                    </select>
+                </div>
+                <table class="data-table employee-table">
+                    <thead>
+                        <tr><th>Name</th><th>Email</th><th>Department</th><th>Role</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody id="employee-table-body">
+                        <tr><td colspan="5" class="text-muted">Loading employees...</td></tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
-    
-    <script type="module" src="employee.js"></script>
+    </main>
+
+    <script type="module" src="js/config.js"></script>
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/sidebar.js"></script>
+    <script type="module" src="js/navbar.js"></script>
+    <script type="module" src="js/employee.js"></script>
+
 </body>
+
 </html>
