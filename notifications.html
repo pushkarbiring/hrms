@@ -1,148 +1,149 @@
 <!-- Done by Ayan Garai -->
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HRM Portal - Alert Notifications</title>
-    <style>
-        /* INLINED VARIABLES.CSS */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        :root {
-            --primary: #4F46E5;
-            --primary-hover: #4338CA;
-            --secondary: #10B981;
-            --danger: #EF4444;
-            --warning: #F59E0B;
-            --bg-main: #F8FAFC;
-            --bg-card: #FFFFFF;
-            --bg-sidebar: #0F172A;
-            --font-family: 'Inter', sans-serif;
-            --text-main: #1E293B;
-            --text-muted: #64748B;
-            --border-color: #E2E8F0;
-            --radius-sm: 6px;
-            --radius-md: 12px;
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+    <title>Notifications - HRMS</title>
 
-        /* INLINED GLOBAL.CSS & LAYOUTS */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: var(--font-family);
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-        }
-        .app-container { display: flex; height: 100vh; overflow: hidden; }
-        
-        /* SIDEBAR STYLING */
-        .sidebar {
-            width: 260px;
-            background-color: var(--bg-sidebar);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 24px;
-            flex-shrink: 0;
-        }
-        .logo-area { font-size: 24px; font-weight: 700; color: var(--secondary); margin-bottom: 32px; }
-        .nav-menu { display: flex; flex-direction: column; gap: 8px; flex-grow: 1; }
-        .nav-item {
-            color: var(--text-muted);
-            text-decoration: none;
-            padding: 12px 16px;
-            border-radius: var(--radius-sm);
-            font-size: 14px;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-        .nav-item:hover, .nav-item.active { background-color: rgba(255, 255, 255, 0.08); color: white; }
-        .user-tag { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 16px; font-size: 13px; color: var(--text-muted); }
-        .user-tag span { color: white; display: block; font-weight: 500; margin-top: 2px; }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        /* MAIN CONTENT VIEWPORT */
-        .main-content { flex-grow: 1; overflow-y: auto; padding: 40px; }
-        .content-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
-        .content-header h1 { font-size: 28px; font-weight: 700; color: var(--text-main); letter-spacing: -0.025em; }
-
-        /* INLINED NOTIFICATIONS.CSS */
-        .alert-stack { display: flex; flex-direction: column; gap: 16px; max-width: 800px; }
-        .alert-block {
-            display: flex;
-            align-items: start;
-            gap: 16px;
-            background: var(--bg-card);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-            padding: 20px;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
-        .alert-block:hover { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
-        .alert-info { border-left: 4px solid var(--primary); }
-        .alert-warning { border-left: 4px solid var(--warning); }
-        .alert-announcement { border-left: 4px solid #8B5CF6; }
-        .alert-content-wrapper { flex-grow: 1; }
-        .alert-block h4 { font-size: 15px; font-weight: 600; color: var(--text-main); margin-bottom: 4px; }
-        .alert-block p { font-size: 14px; color: var(--text-muted); line-height: 1.4; }
-        .alert-timestamp { font-size: 12px; color: var(--text-muted); font-weight: 500; margin-top: 8px; display: block; }
-    </style>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/navbar.css">
 </head>
-<body>
-    <div class="app-container">
-        <aside class="sidebar">
-            <div>
-                <div class="logo-area">HRM Portal</div>
-                <nav class="nav-menu">
-                    <!-- 🛠️ LINK PATHS UPDATED BELOW -->
-                    <a href="payroll.html" class="nav-item">Payroll Status</a>
-                    <a href="reports.html" class="nav-item">Reports Matrix</a>
-                    <a href="notifications.html" class="nav-item active">Alert Workspace</a>
-                    <a href="profile.html" class="nav-item">My Profile</a>
-                    <a href="settings.html" class="nav-item">Settings Layout</a>
-                </nav>
+
+<body class="app-layout">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="brand-logo">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span class="brand-text">HRMS</span>
             </div>
-            <div class="user-tag">Logged in as: <span>HR Accountant</span></div>
-        </aside>
+        </div>
 
-        <main class="main-content">
-            <header class="content-header">
-                <h1>Broadcast Notifications System</h1>
-            </header>
+        <nav class="sidebar-nav">
+            <p class="nav-label">Main Menu</p>
+            <a href="dashboard.html" class="nav-item active">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span>Dashboard</span>
+            </a>
+            <a href="employees.html" class="nav-item admin-only" style="display: none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle>
+                </svg>
+                <span>Employees</span>
+            </a>
+            <a href="attendance.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Attendance</span>
+            </a>
+            <a href="leave.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span>Leave Requests</span>
+            </a>
+            <a href="payroll.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+                <span>Payroll</span>
+            </a>
+        </nav>
 
-            <div class="alert-stack">
-                <div class="alert-block alert-info">
-                    <div class="alert-content-wrapper">
-                        <h4>Payroll Matrix Distribution Complete</h4>
-                        <p>Processing routines ran successfully. Paychecks have been routed out for automated clearing house delivery.</p>
-                        <span class="alert-timestamp">Just now</span>
+        <div class="sidebar-footer">
+            <button id="logout-btn" class="nav-item text-danger"
+                style="background: none; border: none; width: 100%; text-align: left; cursor: pointer;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                <span>Log Out</span>
+            </button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="top-navbar">
+            <div class="navbar-left">
+                <button class="icon-btn mobile-menu-toggle" id="menu-toggle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+                <h2 class="page-title">Notifications</h2>
+            </div>
+
+            <div class="navbar-right">
+                <button class="icon-btn notification-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                    <span class="badge">3</span>
+                </button>
+                <div class="user-profile">
+                    <div class="avatar">
+                        <span id="nav-avatar-initials">--</span>
                     </div>
-                </div>
-
-                <div class="alert-block alert-warning">
-                    <div class="alert-content-wrapper">
-                        <h4>Security Parameter Warning</h4>
-                        <p>Your current workspace verification credential key structure signature is set to expire in 7 calendar days.</p>
-                        <span class="alert-timestamp">2 hours ago</span>
-                    </div>
-                </div>
-
-                <div class="alert-block alert-announcement">
-                    <div class="alert-content-wrapper">
-                        <h4>Corporate Infrastructure Planned Maintenance</h4>
-                        <p>Database tracking clusters will cycle offline for version updates on Saturday night at 22:00 UTC.</p>
-                        <span class="alert-timestamp">1 day ago</span>
+                    <div class="user-info">
+                        <span class="user-name" id="nav-user-name">Loading...</span>
+                        <span class="user-role" id="nav-user-role">...</span>
                     </div>
                 </div>
             </div>
-        </main>
-    </div>
+        </header>
+
+        <div class="dashboard-container">
+
+            <div class="card">
+                <h2>Notifications</h2>
+                <p class="text-muted" style="margin-top: 8px;">Stay updated with the latest activity.</p>
+                <div id="notification-list" style="margin-top: 24px;">
+                    <div class="card" style="margin-bottom: 12px;">
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <div style="width:10px;height:10px;border-radius:50%;background:var(--primary);"></div>
+                            <div><strong>Leave request approved</strong><p class="text-muted" style="font-size:13px;">Your leave for July 15 has been approved by HR.</p></div>
+                        </div>
+                    </div>
+                    <div class="card" style="margin-bottom: 12px;">
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <div style="width:10px;height:10px;border-radius:50%;background:var(--success);"></div>
+                            <div><strong>Payslip available</strong><p class="text-muted" style="font-size:13px;">Your June 2026 payslip is ready for download.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="js/config.js"></script>
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/sidebar.js"></script>
+    <script type="module" src="js/navbar.js"></script>
+    <script type="module" src="js/notification.js"></script>
+
 </body>
+
 </html>
