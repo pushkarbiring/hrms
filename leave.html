@@ -1,0 +1,76 @@
+//<!-- Done by Ayashi Pahari -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management Panel - Leave Request Allocations</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <style>
+        .approval-list-container { display: flex; flex-direction: column; gap: 16px; }
+        .approval-row { display: flex; justify-content: space-between; align-items: center; }
+        .applicant-info { display: flex; align-items: center; gap: 16px; }
+        .avatar-circle { width: 44px; height: 44px; background-color: #E0E7FF; color: var(--primary); font-weight: 600; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+        .applicant-meta h4 { font-size: 15px; font-weight: 600; color: var(--text-main); }
+        .applicant-meta p { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+        .action-button-group { display: flex; gap: 8px; }
+        .btn-approve { background-color: var(--secondary); color: white; }
+        .btn-approve:hover { background-color: #059669; }
+        .btn-deny { background-color: transparent; color: var(--danger); border: 1px solid var(--border-color); }
+        .btn-deny:hover { background-color: rgba(239, 68, 68, 0.05); border-color: var(--danger); }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div>
+                <div class="logo-area">HRM Portal</div>
+                <nav class="nav-menu">
+                    <a href="attendance.html" class="nav-item">Attendance Log</a>
+                    <a href="leave.html" class="nav-item active">Leave Approvals</a>
+                    <a href="calendar.html" class="nav-item">Calendar Tracking</a>
+                </nav>
+            </div>
+            <div class="user-tag">Account Scope: <span>Management Core</span></div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h1>Leave Request Approvals Queue</h1>
+            </header>
+
+            <div class="approval-list-container">
+                <div class="card approval-row">
+                    <div class="applicant-info">
+                        <div class="avatar-circle">JM</div>
+                        <div class="applicant-meta">
+                            <h4>Justin Mason</h4>
+                            <p>Paid Time Off Request • July 12 to July 16 (5 Days) • Reason: Personal Travel</p>
+                        </div>
+                    </div>
+                    <div class="action-button-group">
+                        <button class="btn btn-deny" onclick="alert('Request Denied.')">Decline</button>
+                        <button class="btn btn-approve" onclick="alert('Request Approved.')">Approve</button>
+                    </div>
+                </div>
+
+                <div class="card approval-row">
+                    <div class="applicant-info">
+                        <div class="avatar-circle">CZ</div>
+                        <div class="applicant-meta">
+                            <h4>Clara Zheng</h4>
+                            <p>Medical Emergency Sick Leave • July 08 (1 Day) • Reason: Medical Screening</p>
+                        </div>
+                    </div>
+                    <div class="action-button-group">
+                        <button class="btn btn-deny" onclick="alert('Request Denied.')">Decline</button>
+                        <button class="btn btn-approve" onclick="alert('Request Approved.')">Approve</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

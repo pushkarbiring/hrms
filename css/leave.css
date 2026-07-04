@@ -1,0 +1,85 @@
+/* <!-- Done by Ayashi Pahari --> */
+
+/* css/leave.css */
+
+/* Request Stack Container */
+.approval-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 900px;
+}
+
+/* Row-Level Configuration inside the Global .card Layout */
+.approval-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Left-Side Container for Avatar and Text Meta */
+.applicant-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* User Avatar Bubble Simulation */
+.avatar-circle {
+    width: 44px;
+    height: 44px;
+    background-color: #E0E7FF;
+    color: var(--primary);
+    font-weight: 600;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+/* Text Metrics Scale */
+.applicant-meta h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.applicant-meta p {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 2px;
+    line-height: 1.4;
+}
+
+/* Admin Interaction Button Layout Group */
+.action-button-group {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+/* Primary Accept Action Button Modification Rules */
+.btn-approve {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.btn-approve:hover {
+    background-color: #059669; /* Balanced green depth shift */
+    box-shadow: var(--shadow-md);
+}
+
+/* Destructive / Decline Action Button Modification Rules */
+.btn-deny {
+    background-color: transparent;
+    color: var(--danger);
+    border: 1px solid var(--border-color);
+}
+
+.btn-deny:hover {
+    background-color: rgba(239, 68, 68, 0.05); /* Softer crimson warning flash */
+    border-color: var(--danger);
+}

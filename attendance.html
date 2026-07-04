@@ -1,0 +1,62 @@
+//<!-- Done by Ayashi Pahari -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Tracking - Attendance Interface</title>
+    <!-- Route changes pointing directly inside /css/ folder structure -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/attendance.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div>
+                <div class="logo-area">HRM Portal</div>
+                <nav class="nav-menu">
+                    <a href="attendance.html" class="nav-item active">Attendance Log</a>
+                    <a href="leave.html" class="nav-item">Leave Approvals</a>
+                    <a href="calendar.html" class="nav-item">Calendar Tracking</a>
+                </nav>
+            </div>
+            <div class="user-tag">Account Scope: <span>Active Workspace</span></div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h1>My Clock Activity & Logs</h1>
+            </header>
+
+            <div class="card punch-panel">
+                <div>
+                    <h2 style="margin: 0; font-size: 20px;">Virtual Shift Terminal Node</h2>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">Record activity tracking parameters for compliance ledger auditing.</p>
+                </div>
+                <button class="btn btn-primary" style="padding: 14px 28px; font-size: 15px;" onclick="alert('Shift entry parameter timestamp locked.')">Clock In Shift Entry</button>
+            </div>
+
+            <div class="metrics-row">
+                <div class="card"><h3>Logged Working Hours This Cycle</h3><div class="metric-value">164.5 hrs</div></div>
+                <div class="card"><h3>Average Schedule Compliance</h3><div class="metric-value">98.2%</div></div>
+                <div class="card"><h3>Accrued Overtime Windows</h3><div class="metric-value">4.2 hrs</div></div>
+            </div>
+
+            <div class="card">
+                <h2>Recent Terminal Entry Records</h2>
+                <table class="table-frame">
+                    <thead>
+                        <tr><th>Date Block</th><th>Clock In Event</th><th>Clock Out Event</th><th>Total Duration</th><th>Validation Status</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>July 03, 2026</td><td>08:58 AM</td><td>05:02 PM</td><td>8h 4m</td><td><span class="status-badge status-success">Verified</span></td></tr>
+                        <tr><td>July 02, 2026</td><td>09:01 AM</td><td>05:00 PM</td><td>7h 59m</td><td><span class="status-badge status-success">Verified</span></td></tr>
+                        <tr><td>July 01, 2026</td><td>08:45 AM</td><td>05:15 PM</td><td>8h 30m</td><td><span class="status-badge status-success">Verified</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

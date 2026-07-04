@@ -1,0 +1,66 @@
+/* <!-- Done by Ayashi Pahari --> */
+
+/* css/calendar.css */
+.calendar-layout { 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+}
+
+.calendar-matrix-header { 
+    display: grid; 
+    grid-template-columns: repeat(7, 1fr); 
+    text-align: center; 
+    font-weight: 600; 
+    color: var(--text-muted); 
+    font-size: 13px; 
+    text-transform: uppercase; 
+    border-bottom: 1px solid var(--border-color); 
+    padding-bottom: 12px; 
+    margin-bottom: 12px; 
+}
+
+.calendar-matrix-days { 
+    display: grid; 
+    grid-template-columns: repeat(7, 1fr); 
+    gap: 8px; 
+}
+
+.calendar-day-slot { 
+    background-color: var(--bg-main); 
+    border: 1px solid var(--border-color); 
+    border-radius: var(--radius-sm); 
+    min-height: 95px; 
+    padding: 8px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    transition: var(--transition); 
+}
+
+.calendar-day-slot:hover { 
+    background-color: white; 
+    box-shadow: var(--shadow-sm); 
+    border-color: var(--primary); 
+}
+
+.day-label { 
+    font-size: 12px; 
+    font-weight: 600; 
+    color: var(--text-main); 
+}
+
+.calendar-event-pill { 
+    font-size: 11px; 
+    padding: 3px 6px; 
+    border-radius: 4px; 
+    font-weight: 500; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    margin-top: 4px; 
+}
+
+.event-purple { background-color: #F5F3FF; color: #7C3AED; border-left: 3px solid #7C3AED; }
+.event-emerald { background-color: #ECFDF5; color: #059669; border-left: 3px solid #059669; }
+.outside-month { opacity: 0.35; background-color: #F1F5F9; }
