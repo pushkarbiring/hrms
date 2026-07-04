@@ -1,4 +1,4 @@
-// Done by Pushkar Biring
+/* Done by Pushkar Biring */
 /* css/sidebar.css */
 
 /* =======================
@@ -17,6 +17,7 @@
     border-right: 1px solid var(--border-dark);
     z-index: 1000;
     transition: transform var(--transition);
+    box-shadow: 4px 0 24px rgba(11, 17, 32, 0.4);
 }
 
 /* =======================
@@ -93,21 +94,25 @@
 .nav-item:hover {
     background-color: var(--sidebar-hover);
     color: #ffffff;
+    transform: translateX(4px);
 }
 
 .nav-item:hover svg {
     opacity: 1;
+    transform: scale(1.1);
 }
 
 /* Active State */
 .nav-item.active {
-    background-color: var(--primary);
-    color: #ffffff;
-    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2); /* Soft indigo glow */
+    background-color: var(--sidebar-active);
+    color: var(--primary);
+    box-shadow: inset 3px 0 0 var(--primary);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
 .nav-item.active svg {
     opacity: 1;
+    stroke: var(--primary);
 }
 
 /* =======================
