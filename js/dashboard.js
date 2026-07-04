@@ -9,7 +9,9 @@ import {
     where, 
     getDocs, 
     orderBy, 
-    limit 
+    limit,
+    doc,
+    setDoc
 } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 import { getCurrentUserData } from './auth.js';
 
@@ -31,8 +33,25 @@ document.addEventListener('DOMContentLoaded', () => {
     onAuthStateChanged(auth, async (user) => {
         if (user) {
             try {
-                const userData = await getCurrentUserData(user.uid);
+                let userData = await getCurrentUserData(user.uid);
                 
+                // FALLBACK: If user doc is missing (e.g. ad blocker blocked Firestore during registration),
+                // auto-create it so the dashboard doesn't stay blank.
+                if (!userData) {
+                    console.warn("User document missing. Creating a default one now...");
+                    const defaultData = {
+                        uid: user.uid,
+                        fullName: user.email.split('@')[0],
+                        empId: 'EMP-' + Math.floor(Math.random() * 9000 + 1000),
+                        email: user.email,
+                        role: 'employee',
+                        createdAt: new Date().toISOString()
+                    };
+                    await setDoc(doc(db, "users", user.uid), defaultData);
+                    userData = defaultData;
+                    console.log("Default user document created successfully.");
+                }
+
                 if (userData) {
                     if (userData.role === 'admin') {
                         // Show Admin View
