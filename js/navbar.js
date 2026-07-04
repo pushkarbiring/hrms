@@ -1,3 +1,4 @@
+// Done by Pushkar Biring
 // js/navbar.js
 
 import { auth } from './firebase.js';

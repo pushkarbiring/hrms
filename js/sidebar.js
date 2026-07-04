@@ -1,3 +1,4 @@
+// Done by Pushkar Biring
 // js/sidebar.js
 
 document.addEventListener('DOMContentLoaded', () => {
